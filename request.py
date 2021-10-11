@@ -1,17 +1,31 @@
 import requests
 from requests.exceptions import *
-try:
-    r = requests.get('https://api.ekomi.de/v3/getFeedback?auth=100809|3222cc91604a81845f8c3c0d7&type=json&range=6m')
-    r.raise_for_status()
-    return_list = r.text
-    f = open("demofile2.txt", "w")
-    f.write(return_list)
-    f.close()
-except ConnectionError as c:
-    print("Connection Error Exception Occured")
-except HTTPError as h:
-    print("Bad Status Code")
-except Timeout as t:
-    print('Request timeout occured')
-except TooManyRedirects as r:
-    print('Too many redirects have occured')
+import json
+def fetch_from_HTTP_to_File():
+    try:
+        r = requests.get('https://dsdsdsfdsfdsfdsfdsf.cdcd')
+        r.raise_for_status()
+        return_list = r.text
+        f = open("demofile2.txt", "w")
+        f.write(return_list)
+        f.close()
+        return r.json()
+    except ConnectionError as c:
+        print("Connection Error Exception Occured")
+        error_data = {"response": "error", "message": "Connection Not Established"}
+        return json.dumps(error_data)
+    except HTTPError as h:
+        print("Bad Status Code")
+        error_data = {"response": "error", "message": "Bad Status Code"}
+        return json.dumps(error_data)
+    except Timeout as t:
+        print('Request timeout occured')
+        error_data = {"response": "error", "message": "Request timeout occured"}
+        return json.dumps(error_data)
+    except TooManyRedirects as r:
+        print('Too many redirects have occured')
+        error_data = {"response": "error", "message": "Too many redirects have occured"}
+        return json.dumps(error_data)
+
+
+print(type(fetch_from_HTTP_to_File()))
