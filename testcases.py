@@ -1,6 +1,6 @@
 import pytest
 import request
-
+import filewriting
 """
 This file contains unit tests for request module
 """
@@ -10,26 +10,26 @@ def test_write_to_file1(param):
     """
     Tests the output of file writing function with correct input
     """
-    assert request.write_to_file(param) == True
+    assert filewriting.write_to_file(param) == True
 
 @pytest.mark.parametrize("param",["String",12,(1,2,3,4)])
-def test_cwrite_to_file2(param):
+def test_write_to_file2(param):
     """
     Tests the output of file writing function with incorrect input
     """
-    assert request.write_to_file(param) == False
+    assert filewriting.write_to_file(param) == False
 
 @pytest.mark.parametrize("param",["https://api.ekomi.de/v3/getFeedback?auth=100809|3222cc91604a81845f8c3c0d7&type=json&range=6m"])
-def test_fetch_from_HTTP_to_File1(param):
+def test_fetch_from_HTTP1(param):
     """
     Tests the HTTP fetch function with correct input
     """
-    assert type(request.fetch_from_HTTP_to_File(param)) == list
+    assert type(request.fetch_from_HTTP(param)) == list
 
 @pytest.mark.parametrize("param",["http://somebadurl.example/","Non url",123])
-def test_fetch_from_HTTP_to_File2(param):
+def test_fetch_from_HTTP2(param):
     """
     Tests the HTTP fetch function with incorrect input
     """
-    response_data = request.fetch_from_HTTP_to_File(param)
+    response_data = request.fetch_from_HTTP(param)
     assert response_data["response"] == "error"
