@@ -26,5 +26,3 @@ def fetch_from_HTTP(url:str):
         print("Unable to write data to the file. Incorrect format")
         error_data = '{"response": "error", "message": "Value data exception occured"}'
         return json.loads(error_data)
-
-print(fetch_from_HTTP("https://api.ekomi.de/v3/getFeedback?auth=100809|3222cc91604a81845f8c3c0d7&type=json&range=6m"))
