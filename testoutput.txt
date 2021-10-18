@@ -1,14 +1,17 @@
 ============================= test session starts ==============================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/coeus/Desktop/Assignment 2/python-assignment-2-HTTP-FileWriting-UnitTesting
 collecting ... collected 9 items
 
 testcases.py::test_write_to_file1[param0] PASSED                         [ 11%]
 testcases.py::test_write_to_file1[param1] PASSED                         [ 22%]
-testcases.py::test_cwrite_to_file2[String] PASSED                        [ 33%]
-testcases.py::test_cwrite_to_file2[12] PASSED                            [ 44%]
-testcases.py::test_cwrite_to_file2[param2] PASSED                        [ 55%]
-testcases.py::test_fetch_from_HTTP_to_File1[https://api.ekomi.de/v3/getFeedback?auth=100809|3222cc91604a81845f8c3c0d7&type=json&range=6m] PASSED [ 66%]
-testcases.py::test_fetch_from_HTTP_to_File2[http://somebadurl.example/] PASSED [ 77%]
-testcases.py::test_fetch_from_HTTP_to_File2[Non url] PASSED              [ 88%]
-testcases.py::test_fetch_from_HTTP_to_File2[123] PASSED                  [100%]
+testcases.py::test_write_to_file2[String] PASSED                         [ 33%]
+testcases.py::test_write_to_file2[12] PASSED                             [ 44%]
+testcases.py::test_write_to_file2[param2] PASSED                         [ 55%]
+testcases.py::test_fetch_from_HTTP1[https://api.ekomi.de/v3/getFeedback?auth=100809|3222cc91604a81845f8c3c0d7&type=json&range=6m] PASSED [ 66%]
+testcases.py::test_fetch_from_HTTP2[http://somebadurl.example/] PASSED   [ 77%]
+testcases.py::test_fetch_from_HTTP2[Non url] PASSED                      [ 88%]
+testcases.py::test_fetch_from_HTTP2[123] PASSED                          [100%]
 
-============================== 9 passed in 0.72s ===============================
+============================== 9 passed in 0.70s ===============================
